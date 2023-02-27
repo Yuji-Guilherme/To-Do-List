@@ -10,10 +10,10 @@ function addEventRemoveBtn(newRemoveBtn) {
     newRemoveBtn.addEventListener('click', function () {
         var _a;
         const inputForRemoveBtn = (_a = this.previousElementSibling) === null || _a === void 0 ? void 0 : _a.firstChild;
-        const taskCompletedForRemoveBtn = this.parentElement;
-        const checked = taskCompletedForRemoveBtn.hasAttribute("data-checked");
+        const TaskObjectCompletedForRemoveBtn = this.parentElement;
+        const checked = TaskObjectCompletedForRemoveBtn.hasAttribute("data-checked");
         removeTaskLocalStorage(inputForRemoveBtn.value, checked);
-        taskCompletedForRemoveBtn.remove();
+        TaskObjectCompletedForRemoveBtn.remove();
     });
 }
 function removeTaskLocalStorage(task, checked) {

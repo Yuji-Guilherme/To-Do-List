@@ -6,11 +6,9 @@ const listContainer = document.querySelector("#to-do-list");
 const allBtn = document.querySelector("#all-btn");
 const activeBtn = document.querySelector("#active-btn");
 const completedBtn = document.querySelector("#completed-btn");
-getTaskInLocalStorage().forEach(item => {
-    tasksForLocalStorageArray.push(item);
-    const taskLocalStorageObject = createTemplate(item.name, item.checked);
-    insertOnPage(taskLocalStorageObject);
-});
+const arrayInLocalStorage = getTaskInLocalStorage();
+showTasksInLocalStorage(arrayInLocalStorage);
+updateTasksForLocalStorageArray();
 input.addEventListener('keypress', (e) => {
     if (e.key === "Enter") {
         e.preventDefault,
@@ -26,11 +24,39 @@ addBtn.addEventListener('click', () => {
     setTaskInLocalStorage(input.value);
     clearInput();
 });
+allBtn.addEventListener('click', () => {
+    clearList();
+    showTasksInLocalStorage(arrayInLocalStorage);
+});
+activeBtn.addEventListener('click', () => {
+    clearList();
+    const activeTasksArray = getTaskInLocalStorage().filter(item => item.checked === false);
+    showTasksInLocalStorage(activeTasksArray);
+});
+completedBtn.addEventListener('click', () => {
+    clearList();
+    const completedTasksArray = getTaskInLocalStorage().filter(item => item.checked === true);
+    showTasksInLocalStorage(completedTasksArray);
+});
+function clearList() {
+    listContainer.innerHTML = "";
+}
 function clearInput() {
     input.value = "";
 }
 function focusInput() {
     input.focus();
+}
+function updateTasksForLocalStorageArray() {
+    getTaskInLocalStorage().forEach(item => {
+        tasksForLocalStorageArray.push(item);
+    });
+}
+function showTasksInLocalStorage(array) {
+    array.forEach(item => {
+        const taskLocalStorageObject = createTemplate(item.name, item.checked);
+        insertOnPage(taskLocalStorageObject);
+    });
 }
 function insertOnPage({ checkbox, label, removeBtn }) {
     const list = document.createElement('li');

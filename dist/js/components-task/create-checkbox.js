@@ -10,15 +10,15 @@ export function createCheckBox(checked) {
 function addEventCheckBox(newCheckBox) {
     newCheckBox.addEventListener('change', function () {
         var _a;
-        const taskCompletedForCheckBox = this.parentElement;
+        const TaskObjectCompletedForCheckBox = this.parentElement;
         const inputForCheckBox = (_a = this.nextElementSibling) === null || _a === void 0 ? void 0 : _a.firstChild;
         const checked = this.checked;
-        taskCompletedForCheckBox.classList.toggle("checked");
-        taskCompletedForCheckBox.toggleAttribute("data-checked");
-        checkedInputInLocalStorage(inputForCheckBox.value, checked);
+        TaskObjectCompletedForCheckBox.classList.toggle("checked");
+        TaskObjectCompletedForCheckBox.toggleAttribute("data-checked");
+        changeCheckedInLocalStorage(inputForCheckBox.value, checked);
     });
 }
-function checkedInputInLocalStorage(task, checked) {
+function changeCheckedInLocalStorage(task, checked) {
     removeItemLocalStorageArray(tasksForLocalStorageArray, task, !checked);
     setTaskInLocalStorage(task, checked);
 }

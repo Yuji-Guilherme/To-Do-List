@@ -1,18 +1,14 @@
-import { TaskCompleted, createTemplate } from "./components-task/create-template.js";
-import { getTaskInLocalStorage, tasksForLocalStorageArray, setTaskInLocalStorage } from "./local-storage/local-storage-functions.js";
+import { TaskObjectCompleted, createTemplate } from "./components-task/create-template.js";
+import { getTaskInLocalStorage, setTaskInLocalStorage } from "./local-storage/get-set-remove-functions.js";
+import { showTasksInLocalStorage, updateTasksForLocalStorageArray } from "./local-storage/show-update-functions.js";
 
+export const listContainer = document.querySelector("#to-do-list")!;
+export const arrayInLocalStorage = getTaskInLocalStorage();
 const input = document.querySelector("#input") as HTMLInputElement;
 const addBtn = document.querySelector("#add-btn") as HTMLButtonElement;
-const listContainer = document.querySelector("#to-do-list")!;
-const allBtn = document.querySelector("#all-btn")as HTMLButtonElement;
-const activeBtn = document.querySelector("#active-btn")as HTMLButtonElement;
-const completedBtn = document.querySelector("#completed-btn")as HTMLButtonElement;
 
-getTaskInLocalStorage().forEach(item => {
-    tasksForLocalStorageArray.push(item);
-    const taskLocalStorageObject = createTemplate(item.name, item.checked);
-    insertOnPage(taskLocalStorageObject);
-})
+showTasksInLocalStorage(arrayInLocalStorage);
+updateTasksForLocalStorageArray();
 
 input.addEventListener('keypress', (e) => {
     if(e.key === "Enter") {
@@ -35,10 +31,10 @@ function clearInput():void {
 }
 
 function focusInput():void {
-    input.focus()
+    input.focus();
 }
 
-function insertOnPage({checkbox, label, removeBtn}:TaskCompleted):void {
+export function insertOnPage({checkbox, label, removeBtn}:TaskObjectCompleted):void {
     const list = document.createElement('li');
     list.append(checkbox, label, removeBtn);
     listContainer.appendChild(list);
