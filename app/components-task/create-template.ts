@@ -1,7 +1,14 @@
 import { createTaskLabel } from "./create-label-input.js";
 import { createCheckBox } from "./create-checkbox.js";
 import { createRemoveBtn } from "./create-remove-btn.js";
-export function createTemplate(task, checked) {
+
+export type TaskCompleted = {
+    checkbox: HTMLInputElement,
+    label: HTMLLabelElement,
+    removeBtn:HTMLButtonElement,
+}
+
+export function createTemplate(task:string, checked?:boolean):TaskCompleted {
     return {
         checkbox: createCheckBox(checked),
         label: createTaskLabel(task),
