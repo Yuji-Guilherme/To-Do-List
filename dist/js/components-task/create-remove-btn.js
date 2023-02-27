@@ -1,4 +1,5 @@
-import { removeItemLocalStorageArray, tasksForLocalStorageArray } from "../local-storage/local-storage-functions.js";
+import { removeItemLocalStorageArray } from "../local-storage/get-set-remove-functions.js";
+import { tasksForLocalStorageArray } from "../local-storage/show-update-functions.js";
 export function createRemoveBtn() {
     const newRemoveBtn = document.createElement('button');
     newRemoveBtn.classList.add('remove-btn');

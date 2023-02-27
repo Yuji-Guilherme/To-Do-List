@@ -1,3 +1,6 @@
+import { removeItemLocalStorageArray, setTaskInLocalStorage } from "../local-storage/get-set-remove-functions.js";
+import { tasksForLocalStorageArray } from "../local-storage/show-update-functions.js";
+
 export function createTaskLabel(taskText:string):HTMLLabelElement {
     const newLabel = document.createElement('label');
     newLabel.classList.add('label');
@@ -20,19 +23,28 @@ function createInput(taskText: string) {
     newInput.type = 'text';
     newInput.setAttribute('readonly', "");
     newInput.value = `${taskText}`;
-    addEventInput(newInput);
+    addEventInput(newInput, taskText);
     return newInput;
 }
 
-function addEventInput(newInput: HTMLInputElement) {
+function addEventInput(newInput: HTMLInputElement, oldTask:string) {
     newInput.addEventListener('keypress', function(e) {
         if (e.key === "Enter") {
-            e.preventDefault,
-            this.setAttribute('readonly', ""),
+            e.preventDefault;
+            changeNameInLocalStorage.call(this, oldTask);
+            this.setAttribute('readonly', "");
             this.blur();
         }
     });
     newInput.addEventListener('blur', function() {
+        changeNameInLocalStorage.call(this, oldTask);
         this.setAttribute('readonly', "");
     });
+}
+
+function changeNameInLocalStorage(this: HTMLInputElement, oldTask: string) {
+    const newTask = this.value;
+    const checkBtnForInput = this.parentElement?.previousElementSibling as HTMLInputElement;
+    removeItemLocalStorageArray(tasksForLocalStorageArray, oldTask, checkBtnForInput.checked);
+    setTaskInLocalStorage(newTask, checkBtnForInput.checked);
 }

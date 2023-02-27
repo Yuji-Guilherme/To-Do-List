@@ -1,4 +1,5 @@
-import { removeItemLocalStorageArray, tasksForLocalStorageArray, setTaskInLocalStorage } from "../local-storage/local-storage-functions.js";
+import { removeItemLocalStorageArray, setTaskInLocalStorage } from "../local-storage/get-set-remove-functions.js";
+import { tasksForLocalStorageArray } from "../local-storage/show-update-functions.js";
 export function createCheckBox(checked) {
     const newCheckBox = document.createElement('input');
     newCheckBox.classList.add('check-box');
