@@ -3,7 +3,7 @@ import { tasksForLocalStorageArray } from "../local-storage/show-update-function
 export function createRemoveBtn() {
     const newRemoveBtn = document.createElement('button');
     newRemoveBtn.classList.add('remove-btn');
-    newRemoveBtn.textContent = 'x';
+    newRemoveBtn.innerHTML = `<span class="material-symbols-rounded">close</span>`;
     addEventRemoveBtn(newRemoveBtn);
     return newRemoveBtn;
 }

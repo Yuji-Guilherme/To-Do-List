@@ -3,7 +3,7 @@ import { getTaskInLocalStorage, setTaskInLocalStorage } from "./local-storage/ge
 import { showTasksInLocalStorage, updateTasksForLocalStorageArray } from "./local-storage/show-update-functions.js";
 
 export const listContainer = document.querySelector("#to-do-list")!;
-export const arrayInLocalStorage = getTaskInLocalStorage();
+const arrayInLocalStorage = getTaskInLocalStorage();
 const input = document.querySelector("#input") as HTMLInputElement;
 const addBtn = document.querySelector("#add-btn") as HTMLButtonElement;
 

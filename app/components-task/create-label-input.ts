@@ -23,21 +23,23 @@ function createInput(taskText: string) {
     newInput.type = 'text';
     newInput.setAttribute('readonly', "");
     newInput.value = `${taskText}`;
-    addEventInput(newInput, taskText);
+    addEventInput(newInput);
     return newInput;
 }
 
-function addEventInput(newInput: HTMLInputElement, oldTask:string) {
+function addEventInput(newInput: HTMLInputElement) {
+    let oldInputValue:string = "";
+    newInput.addEventListener('focus', function() {
+        oldInputValue = this.value;
+    })
     newInput.addEventListener('keypress', function(e) {
         if (e.key === "Enter") {
             e.preventDefault;
-            changeNameInLocalStorage.call(this, oldTask);
-            this.setAttribute('readonly', "");
             this.blur();
         }
     });
     newInput.addEventListener('blur', function() {
-        changeNameInLocalStorage.call(this, oldTask);
+        changeNameInLocalStorage.call(this, oldInputValue);
         this.setAttribute('readonly', "");
     });
 }

@@ -20,27 +20,30 @@ function createInput(taskText) {
     newInput.type = 'text';
     newInput.setAttribute('readonly', "");
     newInput.value = `${taskText}`;
-    addEventInput(newInput, taskText);
+    addEventInput(newInput);
     return newInput;
 }
-function addEventInput(newInput, oldTask) {
+function addEventInput(newInput) {
+    let oldInputValue = "";
+    newInput.addEventListener('focus', function () {
+        oldInputValue = this.value;
+    });
     newInput.addEventListener('keypress', function (e) {
         if (e.key === "Enter") {
             e.preventDefault;
-            changeNameInLocalStorage.call(this, oldTask);
-            this.setAttribute('readonly', "");
+            console.log(oldInputValue);
             this.blur();
         }
     });
     newInput.addEventListener('blur', function () {
-        changeNameInLocalStorage.call(this, oldTask);
+        changeNameInLocalStorage.call(this, oldInputValue);
         this.setAttribute('readonly', "");
     });
 }
 function changeNameInLocalStorage(oldTask) {
     var _a;
     const newTask = this.value;
-    const checkForInput = (_a = this.parentElement) === null || _a === void 0 ? void 0 : _a.previousElementSibling;
-    removeItemLocalStorageArray(tasksForLocalStorageArray, oldTask, checkForInput.checked);
-    setTaskInLocalStorage(newTask, checkForInput.checked);
+    const checkBtnForInput = (_a = this.parentElement) === null || _a === void 0 ? void 0 : _a.previousElementSibling;
+    removeItemLocalStorageArray(tasksForLocalStorageArray, oldTask, checkBtnForInput.checked);
+    setTaskInLocalStorage(newTask, checkBtnForInput.checked);
 }

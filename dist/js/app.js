@@ -2,7 +2,7 @@ import { createTemplate } from "./components-task/create-template.js";
 import { getTaskInLocalStorage, setTaskInLocalStorage } from "./local-storage/get-set-remove-functions.js";
 import { showTasksInLocalStorage, updateTasksForLocalStorageArray } from "./local-storage/show-update-functions.js";
 export const listContainer = document.querySelector("#to-do-list");
-export const arrayInLocalStorage = getTaskInLocalStorage();
+const arrayInLocalStorage = getTaskInLocalStorage();
 const input = document.querySelector("#input");
 const addBtn = document.querySelector("#add-btn");
 showTasksInLocalStorage(arrayInLocalStorage);
