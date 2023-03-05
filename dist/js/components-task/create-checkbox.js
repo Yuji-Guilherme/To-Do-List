@@ -2,7 +2,7 @@ import { removeItemLocalStorageArray, setTaskInLocalStorage } from "../local-sto
 import { tasksForLocalStorageArray } from "../local-storage/show-update-functions.js";
 export function createCheckBox(checked) {
     const newCheckBox = document.createElement('input');
-    newCheckBox.classList.add('check-box');
+    newCheckBox.classList.add('check__box');
     newCheckBox.type = 'checkbox';
     newCheckBox.checked = checked || false;
     addEventCheckBox(newCheckBox);
@@ -14,7 +14,6 @@ function addEventCheckBox(newCheckBox) {
         const TaskObjectCompletedForCheckBox = this.parentElement;
         const inputForCheckBox = (_a = this.nextElementSibling) === null || _a === void 0 ? void 0 : _a.firstChild;
         const checked = this.checked;
-        TaskObjectCompletedForCheckBox.classList.toggle("checked");
         TaskObjectCompletedForCheckBox.toggleAttribute("data-checked");
         changeCheckedInLocalStorage(inputForCheckBox.value, checked);
     });

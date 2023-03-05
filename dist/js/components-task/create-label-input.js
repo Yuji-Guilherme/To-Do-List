@@ -31,7 +31,6 @@ function addEventInput(newInput) {
     newInput.addEventListener('keypress', function (e) {
         if (e.key === "Enter") {
             e.preventDefault;
-            console.log(oldInputValue);
             this.blur();
         }
     });

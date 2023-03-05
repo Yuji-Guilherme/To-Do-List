@@ -2,7 +2,7 @@ import { removeItemLocalStorageArray } from "../local-storage/get-set-remove-fun
 import { tasksForLocalStorageArray } from "../local-storage/show-update-functions.js";
 export function createRemoveBtn() {
     const newRemoveBtn = document.createElement('button');
-    newRemoveBtn.classList.add('remove-btn');
+    newRemoveBtn.classList.add('remove__btn');
     newRemoveBtn.innerHTML = `<span class="material-symbols-rounded">close</span>`;
     addEventRemoveBtn(newRemoveBtn);
     return newRemoveBtn;

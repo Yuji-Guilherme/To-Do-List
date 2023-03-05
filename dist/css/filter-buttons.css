@@ -1,0 +1,54 @@
+.filter__buttons {
+    width: 90%;
+    margin: 20px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-row-gap: 7px;
+    justify-items: center;
+}
+
+.filter__buttons > button {
+    color: var(--primary-grey);
+    background-color: transparent;
+    border: solid 2px var(--tertiary-white);
+    border-radius: 15px;    
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter__buttons > button:hover {
+    cursor: pointer;
+    background-color: var(--icon-color);
+    border-color: transparent;
+    transition: .3s;
+}
+
+.active__btn > span, .completed__btn > span {
+    font-size: 1.8em;
+    font-weight: 200;
+}
+
+.all__btn > span {
+    font-weight: 200;
+}
+
+.filter__buttons > button:hover > span {
+    color: var(--primary-white);
+    transition: .3s;
+} 
+
+.filter__buttons > label {
+    cursor: pointer;
+    color: var(--primary-grey);
+    font-size: .88em;
+}
+
+.all__btn:hover ~ label[for="all-btn"], .active__btn:hover ~ label[for="active-btn"], .completed__btn:hover ~ label[for="completed-btn"] {
+    color: var(--primary-black);
+    transition: .5s;
+}

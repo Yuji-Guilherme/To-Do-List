@@ -1,0 +1,59 @@
+.footer {
+    width: 100%;
+    margin: auto 0 7% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit__message {
+    color: var(--secondary-grey);
+    font-size: .9em;
+}
+
+.clear__all__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.clear__all__btn {
+    color: var(--primary-grey);
+    background-color: transparent;
+    border: solid 2px var(--tertiary-white);
+    border-radius: 15px;    
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear__all__btn:hover {
+    cursor: pointer;
+    background-color: var(--icon-color);
+    border-color: transparent;
+    transition: .3s;
+}
+
+.clear__all__btn > span {
+    font-size: 1.6em;
+    font-weight: 200;
+}
+
+.clear__all__btn:hover > span {
+    color: var(--primary-white);
+    transition: .3s;
+} 
+
+.clear__all__label {
+    cursor: pointer;   
+    color: var(--primary-grey);
+    font-size: .8em;
+}
+
+.clear__all__btn:hover ~ label {
+    color: var(--primary-black);
+    transition: .5s;
+}

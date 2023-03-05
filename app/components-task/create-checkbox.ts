@@ -3,7 +3,7 @@ import { tasksForLocalStorageArray } from "../local-storage/show-update-function
 
 export function createCheckBox(checked?:boolean):HTMLInputElement {
     const newCheckBox = document.createElement('input');
-    newCheckBox.classList.add('check-box');
+    newCheckBox.classList.add('check__box');
     newCheckBox.type = 'checkbox';
     newCheckBox.checked = checked || false;
     addEventCheckBox(newCheckBox);
@@ -15,7 +15,6 @@ function addEventCheckBox(newCheckBox: HTMLInputElement) {
         const TaskObjectCompletedForCheckBox = this.parentElement!;
         const inputForCheckBox = this.nextElementSibling?.firstChild as HTMLInputElement;
         const checked:boolean = this.checked;
-        TaskObjectCompletedForCheckBox.classList.toggle("checked");
         TaskObjectCompletedForCheckBox.toggleAttribute("data-checked");
         changeCheckedInLocalStorage(inputForCheckBox.value, checked);
     });

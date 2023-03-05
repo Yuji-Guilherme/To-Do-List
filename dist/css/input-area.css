@@ -1,0 +1,81 @@
+.input-container::before {
+    content: "Add a task";
+    color: var(--secondary-grey);
+    background-color: var(--primary-white);
+    width: 100px;
+    left: 16px;
+    top: -14px;
+    text-align: center;
+    position: absolute;
+}
+
+.input-container {
+    background-color: transparent;
+    border: solid 2px var(--secondary-white);
+    border-radius: 20px;
+    min-height: 50px;
+    width: 85%;
+    padding: 0 12px;
+    margin-top: 9%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .3s;
+}
+
+.input-container:has(.input:focus) {
+    border-color: var(--primary-grey);
+    transition: .5s;
+}
+
+.input {
+    background-color: transparent;
+    color: var(--icon-color);
+    font-weight: 400;
+    border: none;
+    width: 89%;
+    margin: 0 5px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.add__btn {
+    background-color: transparent;
+    border: solid 2px var(--tertiary-white);
+    border-radius: 12px;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    transition: .2s;
+}
+
+.add__btn:hover {
+    cursor: pointer;
+}
+
+.add__btn > span {
+    font-size: 1.3em;
+    font-weight: 300;
+    color: var(--tertiary-grey);
+    transition: .2s;
+}
+
+.input-container:has(.input:focus) > .add__btn, .add__btn:hover {
+    background-color: var(--icon-color);
+    border-color: transparent;
+    transition: .5s;
+}
+
+.input-container:has(.input:focus) > .add__btn > span, .add__btn:hover > span {
+    color: var(--primary-white);
+    transition: .5s;
+}
+
+.input-container:has(.input:focus)::before {
+    color: var(--icon-color);
+    transition: .5s;
+}
