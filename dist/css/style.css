@@ -3,6 +3,7 @@
 @import url(/dist/css/filter-buttons.css);
 @import url(/dist/css/to-do-list.css);
 @import url(/dist/css/to-do-footer.css);
+@import url(/dist/css/dark-mode.css);
 
 :root {
     --primary-white: #fafafa;
@@ -17,8 +18,20 @@
     --to-do-height: 88vh;
 }
 
+:root.dark__mode {
+    --primary-white: #181818;
+    --secondary-white: #212121;
+    --tertiary-white: #3d3d3d;
+    --primary-black: #f1f1f1;
+    --primary-grey: #aaaaaa;
+    --secondary-grey: #dbdbdb;
+    --tertiary-grey: #7c7c7c;
+    --icon-color: #fafafa;
+}
+
 body {
     background-color: var(--primary-white);
+    transition: .2s;
 }
 
 body * {
@@ -37,6 +50,14 @@ body * {
     font-weight: 500;
     height: fit-content;
     margin-top: 33vh;
+    transition: .2s;
+}
+
+.dark__mode__container {
+    bottom: 0;
+    left: 0;
+    margin: auto auto 40px 40px;
+    position: fixed;
 }
 
 .to__do__section {

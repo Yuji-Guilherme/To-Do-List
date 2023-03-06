@@ -12,6 +12,14 @@
 <body>
     <main class="main">
         <h1 class="title">To-Do-List</h1>
+        <div class="dark__mode__container">
+            <input type="checkbox" id="dark-mode" class="check__box__dark__mode">
+            <label for="dark-mode">
+                <span class="material-symbols-rounded">light_mode</span>
+                <span class="material-symbols-rounded">dark_mode</span>
+                <span class="ball"></span>
+            </label>
+        </div>
         <section id="to-do-secton" class="to__do__section">
             <div class="input-container">
                 <input id="input" type="text" placeholder="" class="input">
@@ -49,5 +57,6 @@
    
     <script type="module" src="/dist/js/app.js"></script>
     <script type="module" src="/dist/js/filter-buttons.js"></script>
+    <script src="/dist/js/dark-mode.js"></script>
 </body>
 </html>
