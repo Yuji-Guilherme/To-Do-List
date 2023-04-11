@@ -15,7 +15,7 @@ function ToDoItem({
 }) {
   return (
     <S.ToDoItem className={checked && 'checked'} {...rest} id={id}>
-      <CheckBox checked={checked} onChange={() => checkToDo(id)} />
+      <CheckBox checked={checked} id={id} onChange={() => checkToDo(id)} />
       <ToDoInput text={text} id={id} editToDo={editToDo} />
       <RemoveBtn onClick={() => removeToDo(id)} />
     </S.ToDoItem>

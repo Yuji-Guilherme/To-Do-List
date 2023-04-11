@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background-color: transparent;
-  color: purple;
-  border: 3px solid purple;
+  background-color: #9e86c1;
+  color: white;
   border-radius: 12px;
   padding: 0 15px;
-  height: 50px;
+  height: 55px;
   font-weight: 600;
-  /* font-size: 1.05rem; */
-  margin-left: 5px;
+  font-size: 1.05rem;
+  margin-left: 10px;
 
   &:hover {
     cursor: pointer;
     transition: 0.3s;
-    background-color: purple;
-    color: white;
+    background-color: #825cb9;
   }
 `;
 

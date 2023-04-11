@@ -1,8 +1,10 @@
 import { useToDo } from '@hooks/useToDo';
 
+import { InputWrapper } from '@components/InputWrapper';
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
 import { ToDoContainer } from '@components/ToDoContainer';
+import { EditMessage } from '@components/EditMessage';
 import { ToDoItem } from '@components/ToDoItem';
 
 function ToDo() {
@@ -11,6 +13,7 @@ function ToDo() {
 
   return (
     <>
+    <InputWrapper>    
       <Input
         onKeyPress={(e) => {
           if (e.key === 'Enter') handleSubmit();
@@ -18,7 +21,9 @@ function ToDo() {
         ref={inputRef}
       />
       <Button onClick={() => handleSubmit()} />
+    </InputWrapper>
       <ToDoContainer>
+        {toDos.length > 0 && <EditMessage />}
         {toDos.map((toDo) => (
           <ToDoItem
             checked={toDo.checked}
