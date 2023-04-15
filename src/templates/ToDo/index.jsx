@@ -13,15 +13,15 @@ function ToDo() {
 
   return (
     <>
-    <InputWrapper>    
-      <Input
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') handleSubmit();
-        }}
-        ref={inputRef}
-      />
-      <Button onClick={() => handleSubmit()} />
-    </InputWrapper>
+      <InputWrapper>
+        <Input
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') handleSubmit();
+          }}
+          ref={inputRef}
+        />
+        <Button onClick={() => handleSubmit()} />
+      </InputWrapper>
       <ToDoContainer>
         {toDos.length > 0 && <EditMessage />}
         {toDos.map((toDo) => (

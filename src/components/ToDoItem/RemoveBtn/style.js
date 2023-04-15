@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const RemoveBtn = styled.button`
   width: 40px;
   background-color: transparent;
-  color: black;
+  color: var(--primary-color);
 
   &:hover {
     cursor: pointer;

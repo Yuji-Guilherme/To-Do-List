@@ -1,4 +1,5 @@
 import Base from './Base';
+import Colors from './Colors';
 import Reset from './Reset';
 
 function GlobalStyle() {
@@ -6,6 +7,7 @@ function GlobalStyle() {
     <>
       <Reset />
       <Base />
+      <Colors />
     </>
   );
 }

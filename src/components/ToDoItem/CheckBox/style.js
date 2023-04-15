@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 
 const Label = styled.label`
-  background-color: white;
+  background-color: var(--check-box-background);
   width: 15px;
   height: 15px;
   margin: 0 6px;
   border-radius: 5px;
   position: relative;
 
-    &:hover {
+  &:hover {
     cursor: pointer;
   }
 
   & > input:checked {
-    &::after{
-      content: "";
+    &::after {
+      content: '';
       display: block;
       left: 2px;
       top: 3px;
-      width: 7px;
-      height: 4px;
+      width: 8px;
+      height: 3px;
       color: black;
-      border: 3px solid #825cb9;
+      border: 3px solid var(--to-do-checked);
       border-right: transparent;
       border-top: transparent;
       border-radius: 2px;
@@ -35,4 +35,4 @@ const CheckBox = styled.input`
   appearance: none;
 `;
 
-export { Label , CheckBox };
+export { Label, CheckBox };

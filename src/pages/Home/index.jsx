@@ -1,14 +1,11 @@
 import { Wrapper } from '@components/Wrapper';
-import { Title } from '@components/Title';
+import { Header } from '@templates/Header';
 import { ToDo } from '@templates/ToDo';
-import { HeaderWrapper } from '@components/HeaderWrapper';
 
-function Home() {
+function Home({ handleTheme }) {
   return (
     <Wrapper>
-      <HeaderWrapper>
-      <Title />
-      </HeaderWrapper>
+      <Header handleTheme={handleTheme} />
       <ToDo />
     </Wrapper>
   );

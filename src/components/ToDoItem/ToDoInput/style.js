@@ -6,6 +6,7 @@ const ToDoInput = styled.input`
   background-color: transparent;
   margin: 0 auto 0 5px;
   text-overflow: ellipsis;
+  color: var(--primary-color);
 
   &:focus {
     outline: ${({ readOnly }) => (readOnly ? 'none' : '1px solid black')};
