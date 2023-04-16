@@ -16,20 +16,20 @@ const Button = styled.button`
     background-color: var(--btn-hover);
   }
 
-  @media only screen and (max-device-width : 1024px) {
+  @media only screen and (max-device-width: 1024px) {
     padding: 0 14px;
     height: 50px;
     font-size: 1rem;
 
     &:focus {
-    transition: 0.3s;
-    background-color: var(--btn-hover);
+      transition: 0.3s;
+      background-color: var(--btn-hover);
     }
 
-  @media only screen and (max-device-width : 600px) {
-    height: 47px;
-    font-size: 0.95rem;
-  }
+    @media only screen and (max-device-width: 600px) {
+      height: 47px;
+      font-size: 0.95rem;
+    }
   }
 `;
 

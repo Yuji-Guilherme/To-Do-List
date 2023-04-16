@@ -5,7 +5,7 @@ const EditMessage = styled.p`
   margin-bottom: 15px;
   color: var(--primary-color);
 
-  @media only screen and (max-device-width : 600px) {
+  @media only screen and (max-device-width: 600px) {
     font-size: 0.95rem;
     margin: 0 0 8px 4px;
   }

@@ -6,14 +6,14 @@ const Wrapper = styled.div`
   height: auto;
   padding: 40px 20px;
 
-  @media only screen and (max-device-width : 1024px) {
+  @media only screen and (max-device-width: 1024px) {
     width: 550px;
   }
 
-  @media only screen and (max-device-width : 600px) {
+  @media only screen and (max-device-width: 600px) {
     width: 90%;
     padding: 30px 0px;
-  }  
+  }
 `;
 
 export { Wrapper };

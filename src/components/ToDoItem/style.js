@@ -22,10 +22,10 @@ const ToDoItem = styled.li`
       color: var(--checked-color);
     }
   }
-  @media only screen and (max-device-width : 1024px) {
+  @media only screen and (max-device-width: 1024px) {
     height: 55px;
   }
-  @media only screen and (max-device-width : 600px) {
+  @media only screen and (max-device-width: 600px) {
     height: 52px;
   }
 `;

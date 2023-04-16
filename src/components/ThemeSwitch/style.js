@@ -24,15 +24,15 @@ const Label = styled.label`
     transform: translateX(31px);
   }
 
-  @media only screen and (max-device-width : 1024px) {
+  @media only screen and (max-device-width: 1024px) {
     height: 30px;
     width: 60px;
     padding: 0 6px;
     font-size: 0.9rem;
 
     & input:checked + span {
-    transform: translateX(29px);
-  }
+      transform: translateX(29px);
+    }
   }
 `;
 
@@ -51,13 +51,13 @@ const Ball = styled.span`
   transition: 0.3s;
   position: absolute;
 
-  @media only screen and (max-device-width : 1024px) {
+  @media only screen and (max-device-width: 1024px) {
     height: 24px;
     width: 24px;
     left: 3px;
   }
 
-  @media only screen and (max-device-width : 600px) {
+  @media only screen and (max-device-width: 600px) {
     left: 4px;
   }
 `;

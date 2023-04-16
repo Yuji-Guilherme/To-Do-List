@@ -9,7 +9,7 @@ const ToDoContainer = styled.ul`
   align-items: center;
   gap: 10px;
 
-  @media only screen and (max-device-width : 600px) {
+  @media only screen and (max-device-width: 600px) {
     width: 99%;
     gap: 12px;
   }
