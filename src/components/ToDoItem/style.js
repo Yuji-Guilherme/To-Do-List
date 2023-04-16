@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ToDoItem = styled.li`
   height: 60px;
-  width: 500px;
+  width: 100%;
   padding: 0 8px;
   display: flex;
   align-items: center;
@@ -21,6 +21,12 @@ const ToDoItem = styled.li`
       transition: 0.3s;
       color: var(--checked-color);
     }
+  }
+  @media only screen and (max-device-width : 1024px) {
+    height: 55px;
+  }
+  @media only screen and (max-device-width : 600px) {
+    height: 52px;
   }
 `;
 

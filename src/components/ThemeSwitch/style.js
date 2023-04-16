@@ -23,6 +23,17 @@ const Label = styled.label`
   & input:checked + span {
     transform: translateX(31px);
   }
+
+  @media only screen and (max-device-width : 1024px) {
+    height: 30px;
+    width: 60px;
+    padding: 0 6px;
+    font-size: 0.9rem;
+
+    & input:checked + span {
+    transform: translateX(29px);
+  }
+  }
 `;
 
 const ThemeSwitch = styled.input`
@@ -39,6 +50,16 @@ const Ball = styled.span`
   transform: translateX(0px);
   transition: 0.3s;
   position: absolute;
+
+  @media only screen and (max-device-width : 1024px) {
+    height: 24px;
+    width: 24px;
+    left: 3px;
+  }
+
+  @media only screen and (max-device-width : 600px) {
+    left: 4px;
+  }
 `;
 
 export { Label, ThemeSwitch, Ball };
