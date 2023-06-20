@@ -1,7 +1,7 @@
 ![Funcionamento](https://user-images.githubusercontent.com/102609444/232263803-523bfe13-2488-47d3-bf93-a58c3bff3164.gif)
 
 ## ✔ Resumo do projeto
-Aplicação web desenvolvida de uma lista de tarefas. Visando a prática de React e Styled Components.
+Aplicação web de uma lista de tarefas. Visando a prática de React e Styled Components.
 
 ### Funcionalidades
 Na aplicação é possível:
